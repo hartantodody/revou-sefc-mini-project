@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas RevoU</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+   
+<!-- NAVIGATION BAR -->
+    <header>
+        <div id="navbar">
+                <img src="https://assets.website-files.com/61af164800e38c4f53c60b4e/61af164800e38c11efc60b6d_RevoU.svg" alt="logo RevoU">
+                <a href="#main" class="nav-link right margin-right">Home</a>
+                <a href="/profile.html" class="nav-link">Our Profile</a>
+                <a href="#" class="nav-link">Portofolio</a>
+                <a href="#form" class="nav-link">Message Us</a>
+        </div>
+    </header>
+
+<!-- BANNER -->
+    <div id="main">
+        <div class="main-container">
+            <h1>Hi <span id="prompt-name"></span>, Welcome to StudioUs</h1>
+            <p>An imaginative way, to learn basic and fundamental programming skills</p>
+        </div>
+        <img src="/asset/0ce775f6-9b68-4280-a3e8-59de2240b799.png" class="banner" width="100%" max-height="578px"/>
+    </div>
+
+    <script>
+        var name = prompt("Please input your name!");
+        document.getElementById("prompt-name").innerText =  name;
+    </script>
+
+<!-- HEADQUARTER -->
+    <div id="hq">
+        <h3>Our headquarter</h3>
+        <div class="hq1">
+            <img src="asset/pexels-alleksana-4239546.jpg" width="150px" height="150px" class="hq-img">
+            <label class="hq-label">Bali</label>
+        </div>
+        <div class="hq1">
+            <img src="asset/kk198049_clip10.jpg" width="150px" height="150px" class="hq-img">
+            <label class="hq-label">Surabaya</label>
+        </div>
+        <div class="hq1">
+            <img src="asset/pexels-alifia-harina-2893670.jpg" width="150px" height="150px" class="hq-img">
+            <label class="hq-label">Jakarta</label>
+        </div>
+    </div>
+
+
+<!-- FORM AND RECENT MESSAGES-->
+    <div class="wrapper">
+        <div class="left-message-us">
+
+
+        <!-- FORM -->
+            <form id="form" name="message-form" onsubmit="return validateForm()" action>
+                <h3>Interested? Tell us about you!</h3>
+            <div class="row">
+                <div class="col-1">
+                    <label for="text">Name</label>
+                </div>   
+                <div class="col-2">
+                    <input type="text" placeholder="cth: Dody Hartanto" name="full-name" required/>
+                </div>
+            </div>    
+            <div class="row">    
+                <div class="col-1">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-2">
+                    <input type="email" name="email" required/>
+                </div>
+            </div>   
+            <div class="row">        
+                <div class="col-1">
+                    <label for="phone-number">Phone Number</label>
+                </div>
+                <div class="col-2">
+                    <input type="number" name="phone-number" required/>
+                </div>    
+            </div>    
+            <div class="row"> 
+                <div class="col-1">
+                    <label>Message</label>
+                </div>
+                <div class="col-2">
+                    <textarea id="pesan" cols="50" rows="10" name="messages" placeholder="Tell how you feel about us!" required></textarea>
+                </div>
+            </div>    
+            <div class="row">
+                <button type="submit" value="submit">SUBMIT</button>
+            </div>
+            </form>
+        </div>
+
+        <script>
+            function validateForm(){
+                var name = document.forms["message-form"]["full-name"].value;
+                var email = document.forms["message-form"]["email"].value;
+                var number = document.forms["message-form"]["phone-number"].value;
+                var messages = document.forms["message-form"]["messages"].value;
+
+                 if (name == "" || email == ""  || number == "" || messages == ""){
+                     alert("Tidak boleh ada data yang kosong!");
+                     return false;
+                 }
+
+                document.getElementById("sender-full-name").innerText = name;
+                document.getElementById("sender-email").innerText = email;
+                document.getElementById("sender-phone-number").innerText = number;
+                document.getElementById("sender-messages").innerText = messages;
+                return false;
+            }
+        </script>
+    <!-- RECENT MESSAGES -->
+        <div class="right-message-us">
+            <div class="output">
+                <p>Name : <span id="sender-full-name"></span></p>
+                <p>Email : <span id="sender-email"></span></p>
+                <p>Phone Number : <span id="sender-phone-number"></span></p>
+                <p>Message : <span id="sender-messages"></span></p>
+            </div>
+
+        </div>
+    </div>
+
+<!-- FOOTER -->
+    <footer>
+        <div id="footer">
+        <p>Created by Dody Hartanto</p>
+        <p>RevoU Software Engineering Fundamental Course 2023</p>
+        </div>
+    </footer>
+</body>
+</html>
